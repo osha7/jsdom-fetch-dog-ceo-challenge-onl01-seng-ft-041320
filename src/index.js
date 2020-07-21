@@ -37,7 +37,7 @@ const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 
     function renderBreeds(breeds) {
         const ul = document.getElementById('dog-breeds');
-        removeChildren(ul); //for filter by letter
+        
         Object.keys(breeds.message).forEach(function(key) {
             let breed = breeds.message[key];
             const li = document.createElement('li');
@@ -70,13 +70,6 @@ const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
         })
     }
 
-        function removeChildren(element) {
-            let child = element.lastElementChild;
-            while (child) {
-                element.removeChild(child);
-                child = element.lastElementChild;
-            }
-        }
         
         function filterBreedsByFirstLetter(e) {
             const selectLetter = e.target.value;
